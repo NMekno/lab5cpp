@@ -99,3 +99,9 @@ int Data::Porownaj(const Data & wzor) const
 	else
 		return 0;
 }
+
+std::ostream & operator<<(std::ostream & wy, const Data & wzor)
+{
+	wy << wzor.m_nDzien << "-" << wzor.m_nMiesiac << "-" << wzor.m_nRok;
+	return wy;
+}

@@ -4,8 +4,14 @@ using namespace std;
 
 Pracownik::Pracownik()
 	:m_Nastepny(nullptr)
+	, id_Pracownika++
 {
 	
+}
+
+Pracownik::Pracownik(const Pracownik & wzor)
+{
+
 }
 
 
@@ -76,4 +82,22 @@ int Pracownik::Porownaj(const Pracownik &wzorzec) const
 		return 1;
 	else
 		return -1;
+}
+
+Pracownik & Pracownik::operator=(const Pracownik & wzor)
+{
+	Pracownik pracownikNowy;
+	pracownikNowy = Pracownik(wzor);
+	return pracownikNowy;
+}
+
+bool Pracownik::operator==(const Pracownik & wzor)
+{
+	return this->Porownaj(wzor);
+}
+
+std::ostream & operator<<(std::ostream & wy, const Pracownik & p)
+{
+	wy << p.m_Imie.Zwroc() << "	" << p.m_Nazwisko.Zwroc() << "	" << p.id_Pracownika << "	" << p.m_DataUrodzenia << endl;
+	return wy;
 }

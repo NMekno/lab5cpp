@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 class Data
 {
 	int m_nDzien;
@@ -15,5 +16,6 @@ public:
 	void Wpisz();
 	void Koryguj();
 	int Porownaj(const Data & wzor) const;
+	friend std::ostream& operator<<(std::ostream& wy, const Data & wzor);
 };
 

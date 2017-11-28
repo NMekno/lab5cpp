@@ -1,9 +1,9 @@
 #include <iostream>
-#include "Data.h"
-#include "Napis.h"
 #include "Pracownik.h"
 #include "ListaPracownikow.h"
 using namespace std;
+
+
 
 int main()
 {
